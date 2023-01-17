@@ -1,0 +1,11 @@
+# default constants
+plugin.tx_ehpowermailtools {
+	view {
+		# cat=plugin.tx_ehpowermailtools/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:eh_powermail_tools/Resources/Private/Templates/
+		# cat=plugin.tx_ehpowermailtools/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:eh_powermail_tools/Resources/Private/Partials/
+		# cat=plugin.tx_ehpowermailtools/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:eh_powermail_tools/Resources/Private/Layouts/
+	}
+}

@@ -1,0 +1,10 @@
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:eh_powermail_tools/Configuration/TypoScript/setup.typoscript">
+
+###########################
+# Backend Module Powermail
+###########################
+module.tx_powermail {
+	view {
+		partialRootPaths.200 = EXT:eh_powermail_tools/Resources/Private/Partials/Powermail/
+	}
+}

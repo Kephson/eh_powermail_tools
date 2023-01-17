@@ -1,0 +1,1 @@
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:eh_powermail_tools/Configuration/TypoScript/constants.typoscript">

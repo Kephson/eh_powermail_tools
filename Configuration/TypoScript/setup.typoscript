@@ -1,0 +1,20 @@
+# default setup
+plugin.tx_ehpowermailtools {
+	# configure the path for the templates here
+	view {
+		templateRootPaths {
+			0 = EXT:eh_powermail_tools/Resources/Private/Templates/
+			1 = {$plugin.tx_ehpowermailtools.view.templateRootPath}
+		}
+
+		partialRootPaths {
+			0 = EXT:eh_powermail_tools/Resources/Private/Partials/
+			1 = {$plugin.tx_ehpowermailtools.view.partialRootPath}
+		}
+
+		layoutRootPaths {
+			0 = EXT:eh_powermail_tools/Resources/Private/Layouts/
+			1 = {$plugin.tx_ehpowermailtools.view.layoutRootPath}
+		}
+	}
+}
