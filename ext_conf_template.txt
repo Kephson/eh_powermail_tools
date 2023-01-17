@@ -2,5 +2,5 @@
 htaccess_username =
 # cat=basic/enable/1; type=string; label=htaccess password if set
 htaccess_password =
-# cat=basic/enable/1; type=string; label=Full site URl to see mails
+# cat=basic/enable/1; type=string; label=Full site URl as fallback to see mails
 full_site_url =

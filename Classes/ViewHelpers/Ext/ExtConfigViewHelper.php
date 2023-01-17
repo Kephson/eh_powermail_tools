@@ -5,6 +5,7 @@ namespace EHAERER\EhPowermailTools\ViewHelpers\Ext;
 use TYPO3\CMS\Core\Configuration\Exception\ExtensionConfigurationExtensionNotConfiguredException;
 use TYPO3\CMS\Core\Configuration\Exception\ExtensionConfigurationPathDoesNotExistException;
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
+use TYPO3\CMS\Core\Site\Entity\Site;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
@@ -42,7 +43,16 @@ class ExtConfigViewHelper extends AbstractViewHelper
         $extConf = GeneralUtility::makeInstance(ExtensionConfiguration::class)
             ->get($extKey);
         $configKey = $this->arguments['configKey'];
-        if (isset($extConf[$configKey])) {
+        if ($configKey === 'full_site_url') {
+            /** @var Site $site */
+            $site = $GLOBALS['TYPO3_REQUEST']->getAttribute('site');
+            $baseUri = $site->getBase();
+            if (empty($baseUri) && isset($extConf[$configKey])) {
+                return $extConf[$configKey];
+            } else {
+                return $baseUri;
+            }
+        } elseif (isset($extConf[$configKey])) {
             return $extConf[$configKey];
         }
         return '';
